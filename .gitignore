@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# environment / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# test/build
+coverage/
+*.log
+*.tsbuildinfo

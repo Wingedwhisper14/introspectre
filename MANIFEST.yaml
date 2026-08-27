@@ -1,0 +1,21 @@
+name: betaal
+version: 0.1.0
+created: 2026-08-26
+purpose: "Portable Socratic cultural interlocutor protocol"
+canonical_protocol: BETAAL.md
+pilot_work: works/justice
+memory:
+  human: memory/SESSION_MEMORY.md
+  schema: memory/session-memory.schema.json
+adapters:
+  - adapters/chatgpt-project
+  - adapters/claude-skill
+  - adapters/system-prompt.md
+evals: evals/conversations.md
+
+contributors:
+  - name: Ishan Singh
+    email: ishansingh99@gmail.com
+web_app: apps/web
+build_plan: docs/BUILD_PLAN.md
+codex_instructions: AGENTS.md

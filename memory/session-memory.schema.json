@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BetaalSessionMemory",
+  "type": "object",
+  "required": ["work", "spoiler_scope", "entries"],
+  "properties": {
+    "work": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string"},
+        "version": {"type": ["string", "null"]},
+        "progress": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "spoiler_scope": {
+      "type": "string",
+      "enum": ["none", "current", "full"]
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "summary", "confidence", "created_at"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "user_position",
+              "uncertainty",
+              "changed_mind",
+              "connection",
+              "prediction",
+              "unresolved_question",
+              "work_progress"
+            ]
+          },
+          "summary": {"type": "string"},
+          "confidence": {
+            "type": "string",
+            "enum": ["explicit", "strongly_implied", "tentative"]
+          },
+          "created_at": {"type": "string"},
+          "source_session": {"type": ["string", "null"]},
+          "supersedes": {"type": ["string", "null"]},
+          "tags": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
